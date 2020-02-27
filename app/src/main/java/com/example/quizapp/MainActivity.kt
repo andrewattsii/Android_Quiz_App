@@ -4,6 +4,7 @@ import android.content.Intent
 import android.net.Uri
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.View
 import android.widget.VideoView
 import kotlinx.android.synthetic.main.activity_main.*
 
@@ -17,7 +18,7 @@ class MainActivity : AppCompatActivity() {
 
 
     }
-    fun openActivity() {
+    fun openActivity(view:View) {
         startActivity(Intent(this, QuizActivity::class.java))
 
     }

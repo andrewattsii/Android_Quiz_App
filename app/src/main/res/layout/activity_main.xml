@@ -45,6 +45,7 @@
             android:layout_marginRight="20dp"
             android:background="@drawable/button"
             android:gravity="center|center_horizontal"
+            android:onClick="openActivity"
             android:text="Get Started"
             android:textColor="#fff"
             android:textSize="12sp" />
