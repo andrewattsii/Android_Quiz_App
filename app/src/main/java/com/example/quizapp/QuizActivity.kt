@@ -4,10 +4,15 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
 import android.widget.TextView
+import androidx.core.app.ComponentActivity.ExtraData
+import androidx.core.content.ContextCompat.getSystemService
+import android.icu.lang.UCharacter.GraphemeClusterBreak.T
+
+
 
 class QuizActivity : AppCompatActivity() {
 
-    var questions = arrayOf("Is the Amazon the biggest rain forest in the word?", "Roughly how big is the amazon?", "Does teh Amazon have the largest river?", "What mountain range influences the flow of the amazon river?", "In what country is most of the Amazons forest located in?")
+    var questions = arrayOf("Animone", "Rose", "Broom", "Dahlia", "Catmint", "Cosmos")
     lateinit var right_answer: TextView
     lateinit var question_textView: TextView
     lateinit var user_answer: TextView
@@ -18,6 +23,7 @@ class QuizActivity : AppCompatActivity() {
         right_answer = findViewById(R.id.right_answer)
         question_textView = findViewById(R.id.question_textview)
         user_answer = findViewById(R.id.user_answer)
+        question_textView.text = mixLetters("word")
 
     }
     fun startQuiz(){
@@ -39,5 +45,17 @@ class QuizActivity : AppCompatActivity() {
     }
     fun wrongAnswer(){
 
+    }
+
+
+    fun mixLetters(word: String): String{
+        val characters = word.toCharArray()
+        for (i in characters.indices) {
+            val randomIndex = (Math.random() * characters.size).toInt()
+            val temp = characters[i]
+            characters[i] = characters[randomIndex]
+            characters[randomIndex] = temp
+        }
+        return String(characters)
     }
 }
