@@ -4,15 +4,13 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#E940990D"
-    tools:context=".QuizActivity" >
+    android:background="@drawable/gl"
+    tools:context=".QuizActivity">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:orientation="vertical">
-
-    </LinearLayout>
+        android:orientation="vertical" />
 
     <TextView
         android:id="@+id/textView2"
@@ -60,6 +58,7 @@
             android:hint="Enter your answer"
             android:inputType="textPersonName"
             android:padding="15dp"
+            android:textColor="#fff"
             android:textColorHint="#fff" />
 
     </LinearLayout>
@@ -76,7 +75,9 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:background="@drawable/input"
-            android:text="Show" />
+            android:onClick="showAnswer"
+            android:text="Show"
+            android:textColor="#fff" />
 
         <Button
             android:id="@+id/button2"
@@ -84,7 +85,9 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:background="@drawable/input"
-            android:text="Change" />
+            android:onClick="changeQuestion"
+            android:text="Change"
+            android:textColor="#fff" />
 
         <Button
             android:id="@+id/button3"
@@ -92,7 +95,9 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:background="@drawable/input"
-            android:text="Check" />
+            android:onClick="checkAnswer"
+            android:text="Check"
+            android:textColor="#fff" />
     </LinearLayout>
 
 </RelativeLayout>
